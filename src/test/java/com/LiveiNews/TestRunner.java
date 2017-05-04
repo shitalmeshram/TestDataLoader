@@ -89,7 +89,8 @@ public class TestRunner{
         registrationPage.EnterPwd("12345");
         registrationPage.EnterCpwd("12345");
         registrationPage.EnterUname(randomEmailChars);
-       // System.out.println("username = "+randomEmailChars);
+       System.out.println("username = "+randomEmailChars);
+        System.out.println("Email = "+randomEmailChars+"@getnada.com");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
       registrationPage.ClicknextBtn();
@@ -108,8 +109,10 @@ public class TestRunner{
     public void afterClass() throws InterruptedException {
         //Close the browser
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-       // driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
+        driver1.close();
+        driver1.quit();
     }
 
 }
